@@ -21,7 +21,7 @@ public class Calcolatrice {
     }
     
     public double calcolaProdotto() {       //Metodo che calcola il prodotto di due numeri
-        
+        return primoNumero*secondoNumero;
     }
     
     public double calcolaQuoziente() {      //Metodo che calcola il quoziente di due numeri
