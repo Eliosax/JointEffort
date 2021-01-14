@@ -6,7 +6,7 @@ public class Calcolatrice {
     protected String segno;
     protected double secondoNumero;
 
-    public Calcolatrice(int primoNumero, String segno, int secondoNumero) {
+    public Calcolatrice(double primoNumero, String segno, double secondoNumero) {
         this.primoNumero = primoNumero;
         this.segno = segno;
         this.secondoNumero = secondoNumero;
@@ -25,7 +25,14 @@ public class Calcolatrice {
     }
     
     public double calcolaQuoziente() {      //Metodo che calcola il quoziente di due numeri
+        double quoziente;
         
+        if(secondoNumero > 0)
+            quoziente = primoNumero / secondoNumero;
+        else
+            quoziente = -1;
+        
+        return quoziente;
     }
 
     public void setPrimoNumero(double primoNumero) {
@@ -52,5 +59,27 @@ public class Calcolatrice {
         return secondoNumero;
     }
     
+    public double risultato(){
+        double finale;
+
+        if(segno == "+")
+            finale = this.calcolaSomma();
+        else{
+            if(segno == "-")
+                finale = this.calcolaDifferenza();
+            else{
+                if(segno == "*" || segno == "x")
+                    finale = this.calcolaProdotto();
+                else{
+                    if(segno == "/")
+                        finale = this.calcolaQuoziente();
+                    else
+                        finale = 0;
+                }
+            }
+        }
+        return finale;
+    }
     
+    //Nel main fare un if dove si controlla sia il segno che finale, nel caso il segno sia diverso da quelli inseriti finale = 0 (cout: errore); invece nel caso il segno sia divisione e finale sia -1 (cout: impossibile)
 }
