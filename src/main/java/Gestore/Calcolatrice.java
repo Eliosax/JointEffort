@@ -87,9 +87,7 @@ public class Calcolatrice {
                     else{
                         if(segno.equals("%"))
                             finale = this.calcolaModulo();
-                       // else{
-                         //   finale = 0;  
-                        //}     
+                            
                     }     
                 }
             }
@@ -97,6 +95,5 @@ public class Calcolatrice {
         return finale;
     }
     
-    //Nel main fare un if dove si controlla sia il segno che finale, nel caso il segno sia diverso da quelli inseriti finale = 0 (cout: errore); invece nel caso il segno sia divisione e finale sia -1 (cout: impossibile)
 
 }

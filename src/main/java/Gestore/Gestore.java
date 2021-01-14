@@ -6,6 +6,7 @@ public class Gestore {
         Scanner continua = new Scanner(System.in);
         Scanner numeri = new Scanner(System.in);
         Scanner segno = new Scanner(System.in);
+        double risultato = 0;
        
         Calcolatrice calcolatrice = new Calcolatrice();
         
@@ -16,8 +17,14 @@ public class Gestore {
             System.out.println("\nInserisci il segno dell'operazione: ");
             calcolatrice.setSegno(segno.nextLine());
             System.out.println("\nInserisci il secondo numero: ");
-            calcolatrice.setPrimoNumero(numeri.nextDouble());
-            System.out.println("Il risultato dell'operazione e': " + calcolatrice.risultato());
+            calcolatrice.setSecondoNumero(numeri.nextDouble());
+            risultato = calcolatrice.risultato();
+            
+            if(risultato == -1 && calcolatrice.getSegno().equals("/"))
+                System.out.println("Il risultato dell'operazione e': impossibile" );
+            else
+                System.out.println("Il risultato dell'operazione e': " + risultato);
+            
             System.out.println("\nSi vuole eseguire un ulteriore operazione? si|no\n");
         } while(continua.nextLine().equals("si"));
         
