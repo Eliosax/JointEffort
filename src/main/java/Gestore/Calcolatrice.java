@@ -13,7 +13,7 @@ public class Calcolatrice {
     }
     
     public double calcolaSomma() {      //Metodo che calcola la somma di due numeri 
-        
+        return primoNumero + secondoNumero;
     }
     
     public double calcolaDifferenza() {     //Metodo che calcola la differenza di due numeri
