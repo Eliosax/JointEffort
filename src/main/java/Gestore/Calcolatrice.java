@@ -25,12 +25,19 @@ public class Calcolatrice {
     }
     
     public double calcolaQuoziente() {      //Metodo che calcola il quoziente di due numeri
-        double quoziente;
+        double quoziente = 0;
         
         if(secondoNumero > 0)
             quoziente = primoNumero / secondoNumero;
-        else
-            quoziente = -1;
+        else{
+            if(secondoNumero == 0)
+                quoziente = -1;
+            else{
+                if(primoNumero == 0)
+                    quoziente = 0;
+            }
+        }
+            
         
         return quoziente;
     }
