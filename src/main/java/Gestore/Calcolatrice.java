@@ -2,10 +2,12 @@
 package Gestore;
 
 public class Calcolatrice {
-    protected double primoNumero;
-    protected String segno;
-    protected double secondoNumero;
+    private double primoNumero;
+    private String segno;
+    private double secondoNumero;
 
+    public Calcolatrice() {};
+    
     public Calcolatrice(double primoNumero, String segno, double secondoNumero) {
         this.primoNumero = primoNumero;
         this.segno = segno;
@@ -17,11 +19,11 @@ public class Calcolatrice {
     }
     
     public double calcolaDifferenza() {     //Metodo che calcola la differenza di due numeri
-        return primoNumero-secondoNumero;
+        return primoNumero - secondoNumero;
     }
     
     public double calcolaProdotto() {       //Metodo che calcola il prodotto di due numeri
-        return primoNumero*secondoNumero;
+        return primoNumero * secondoNumero;
     }
     
     public double calcolaQuoziente() {      //Metodo che calcola il quoziente di due numeri
@@ -37,11 +39,13 @@ public class Calcolatrice {
                     quoziente = 0;
             }
         }
-            
-        
         return quoziente;
     }
 
+    public double calcolaModulo() {
+        return primoNumero % secondoNumero;
+    }
+    
     public void setPrimoNumero(double primoNumero) {
         this.primoNumero = primoNumero;
     }
@@ -67,21 +71,26 @@ public class Calcolatrice {
     }
     
     public double risultato(){
-        double finale;
+        double finale = 0;
 
-        if(segno == "+")
+        if(segno.equals("+"))
             finale = this.calcolaSomma();
         else{
-            if(segno == "-")
+            if(segno.equals("-"))
                 finale = this.calcolaDifferenza();
             else{
-                if(segno == "*" || segno == "x")
+                if(segno.equals("*") || segno.equals("X"))
                     finale = this.calcolaProdotto();
                 else{
-                    if(segno == "/")
+                    if(segno.equals("/"))
                         finale = this.calcolaQuoziente();
-                    else
-                        finale = 0;
+                    else{
+                        if(segno.equals("%"))
+                            finale = this.calcolaModulo();
+                       // else{
+                         //   finale = 0;  
+                        //}     
+                    }     
                 }
             }
         }
@@ -89,4 +98,5 @@ public class Calcolatrice {
     }
     
     //Nel main fare un if dove si controlla sia il segno che finale, nel caso il segno sia diverso da quelli inseriti finale = 0 (cout: errore); invece nel caso il segno sia divisione e finale sia -1 (cout: impossibile)
+
 }
