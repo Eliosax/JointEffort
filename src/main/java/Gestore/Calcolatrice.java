@@ -17,7 +17,7 @@ public class Calcolatrice {
     }
     
     public double calcolaDifferenza() {     //Metodo che calcola la differenza di due numeri
-        
+        return primoNumero-secondoNumero;
     }
     
     public double calcolaProdotto() {       //Metodo che calcola il prodotto di due numeri
